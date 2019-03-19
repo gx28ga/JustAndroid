@@ -1,4 +1,4 @@
-package com.axun.justjava;
+package com.axun.justandroid;
 
 import org.junit.Test;
 

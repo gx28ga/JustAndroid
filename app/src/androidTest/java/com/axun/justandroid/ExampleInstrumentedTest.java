@@ -1,4 +1,4 @@
-package com.axun.justjava;
+package com.axun.justandroid;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
