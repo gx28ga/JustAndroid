@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int viewId=v.getId();
     switch (viewId){
       case R.id.btn_img_set:
-        Intent intent=new Intent(this,SecondActivity.class);
+        Intent intent=new Intent(this,ThirdActivity.class);
         startActivity(intent);
 //        dialog=new AlertDialog.Builder(this);
 //        dialog.setTitle("This is a new Dialog");

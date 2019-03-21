@@ -40,14 +40,34 @@ public class FruitAdapter extends BaseAdapter {
   
   @Override
   public View getView(int position,View convertView,ViewGroup parent){
-    View view;    
+    
+    Fruit fruit=mList.get(position);
+    View view;
+    ViewHolder viewHolder;
     if(convertView==null){
       view=LayoutInflater.from(context).inflate(R.layout.fruit_item,parent,false);
+      viewHolder=new ViewHolder(view);
+      
+      view.setTag(viewHolder);
     }else{
       view=convertView;
+      viewHolder=(ViewHolder) view.getTag();
     }
+    
+    viewHolder.fruitName.setText(fruit.getName());
+    viewHolder.fruitImg.setImageResource(fruit.getImageId());
     
     return view;
   }
   
+  class ViewHolder{
+    ImageView fruitImg;
+    TextView fruitName;
+    View itemView;
+    public ViewHolder(View itemView){
+        this.itemView=itemView;
+        fruitName=itemView.findViewById(R.id.fruit_name);
+        fruitImg=itemView.findViewById(R.id.fruit_img);
+    }
+  }
 }

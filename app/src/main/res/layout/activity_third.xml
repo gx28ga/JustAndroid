@@ -4,11 +4,32 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:orientation="vertical"
   tools:context=".ThirdActivity">
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_list"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#ededed">
+      
+  </android.support.v7.widget.RecyclerView>
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+      android:id="@+id/edit_msg"
+      android:layout_weight="1"
+      android:layout_width="0dp"
+      android:layout_height="match_parent" />
+    <Button
+      android:id="@+id/btn_send"
+      android:background="#cefeb1"
+      android:text="Send"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+  </LinearLayout>
 
-  <Button
-    android:text="yes"
-    android:id="@+id/btn_sa"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+  
 </LinearLayout>

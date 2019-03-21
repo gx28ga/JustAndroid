@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -68,7 +69,7 @@ public class SecondActivity extends AppCompatActivity {
     ArrayList<Contact> contacts=Contact.initContactList(names);
     ContactsAdapter contactsAdapter=new ContactsAdapter(contacts);
     recyclerView.setAdapter(contactsAdapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+    recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
     
   }
 
