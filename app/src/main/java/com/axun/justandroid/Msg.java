@@ -24,6 +24,9 @@ public class Msg {
     Msg msg1=new Msg("hello",Msg.TYPE_RECEIVED);
     Msg msg2=new Msg("hello again",Msg.TYPE_RECEIVED);
     Msg msg3=new Msg("hello one more time",Msg.TYPE_RECEIVED);
+    list.add(msg1);
+    list.add(msg2);
+    list.add(msg3);
     
   }
 }

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity"
-  android:id="@+id/layout_news_list">
-  <fragment
-    android:name="com.axun.justandroid.NewsListFragment"
-    android:id="@+id/frag_news_list"
+  android:orientation="vertical"
+  tools:context=".NewsListFragment">
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_news_list"
+    android:background="#f330bb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
-  
-  
-  
+    
 
 </LinearLayout>

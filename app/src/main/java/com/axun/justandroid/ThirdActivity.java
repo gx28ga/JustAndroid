@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +37,26 @@ public class ThirdActivity extends AppCompatActivity {
     msgList=new ArrayList<>();
     Msg.initMsgList(msgList);
     msgAdapter=new MsgAdapter(msgList);
+    
     recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
     recyclerView.setAdapter(msgAdapter);
+    
+    btnSend.setOnClickListener(new View.OnClickListener() {
+      
+      @Override
+      public void onClick(View v) {
+        
+        
+        String content=inputText.getText().toString();
+        if(!"".equals(content)){
+          Msg msg=new Msg(content,Msg.TYPE_SEND);
+          msgList.add(msg);
+          msgAdapter.notifyItemInserted(msgList.size()-1);
+          recyclerView.scrollToPosition(msgList.size()-1);
+          inputText.setText("");
+        }
+      }
+    });
     
     
   }

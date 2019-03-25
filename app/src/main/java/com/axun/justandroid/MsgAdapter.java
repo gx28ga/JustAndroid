@@ -27,10 +27,10 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
     Msg msg=mList.get(position);
     int msgType=msg.getType();
     if(msgType==1){
-      viewHolder.leftLayout.setVisibility(View.INVISIBLE);
+      viewHolder.leftLayout.setVisibility(View.GONE);
       viewHolder.rightMsg.setText(msg.getContent());
     }else if (msgType==0){
-      viewHolder.rightLayout.setVisibility(View.INVISIBLE);
+      viewHolder.rightLayout.setVisibility(View.GONE);
       viewHolder.leftMsg.setText(msg.getContent());
     }
     

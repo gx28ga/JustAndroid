@@ -1,83 +1,15 @@
 package com.axun.justandroid;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
   private static final String TAG = "MainActivity";
-  Button buttonA,buttonB;
-  Intent intentA,intentB;
-  ImageView imageView;
-  ProgressBar progressBar;
-  Button btnImgSet;
-  AlertDialog.Builder dialog;
-  ActionBar actionBar;
-  private String [] data={
-    "banana0",
-    "banana1",
-    "banana2",
-    "banana3",
-    "banana4",
-    "banana5",
-    "banana6",
-    "banana7",
-    "banana8",
-    "banana9",
-    "banana10",
-    "banana11",
-    "banana12",
-    "banana13",
-    "banana14",
-    "banana15",
-    "banana16",
-    "banana17",
-    "banana18",
-    "banana19",
-    "banana20",
-    "banana21",
-    "banana22",
-    "banana23",
-    "banana24",
-    "banana25",
-    "banana26",
-    "banana27",
-    "banana28",
-    "banana29",
-    "banana30",
-    "banana31",
-    "banana32",
-    "banana33",
-    "banana34",
-    "banana35",
-    "banana36",
-    "banana37",
-    "banana38",
-    "banana39",
-    "banana40",};
-   private ListView listView;
-   private ArrayAdapter<String> arrayAdapter;
-   List<Fruit> list;
+  
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     
@@ -92,23 +24,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       Log.d(TAG, tempData);
       Toast.makeText(this,tempData,Toast.LENGTH_LONG).show();
     }
-    listView=findViewById(R.id.lv_banana);
-    
-    
-    FruitAdapter adapter=new FruitAdapter(Fruit.initFruitList(data),this);
-    listView.setAdapter(adapter);
-
-
-    
-    listView.setOnItemClickListener(this);
-    actionBar=getSupportActionBar();
-    if(actionBar!=null){
-      actionBar.hide();
-    }
+//    listView=findViewById(R.id.lv_banana);
+//    
+//    list=Fruit.initFruitList(data);
+//    FruitAdapter adapter=new FruitAdapter(list,this);
+//    listView.setAdapter(adapter);
+//
+//
+//    
+//    listView.setOnItemClickListener(this);
+//    actionBar=getSupportActionBar();
+//    if(actionBar!=null){
+//      actionBar.hide();
+//    }
 //    progressBar=findViewById(R.id.progress_bar);
-    imageView=findViewById(R.id.iv_img);
-    btnImgSet=findViewById(R.id.btn_img_set);
-    btnImgSet.setOnClickListener(this);
+//    imageView=findViewById(R.id.iv_img);
+//    btnImgSet=findViewById(R.id.btn_img_set);
+//    btnImgSet.setOnClickListener(this);
     
 //    buttonA=findViewById(R.id.start_normal_activity);
 //    buttonB=findViewById(R.id.start_dialog_activity);
@@ -156,11 +88,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
   @Override
   public void onClick(View v) {
-    int viewId=v.getId();
-    switch (viewId){
-      case R.id.btn_img_set:
-        Intent intent=new Intent(this,ThirdActivity.class);
-        startActivity(intent);
+//    int viewId=v.getId();
+//    switch (viewId){
+//      case R.id.btn_img_set:
+//        Intent intent=new Intent(this,FourthActivity.class);
+//        startActivity(intent);
 //        dialog=new AlertDialog.Builder(this);
 //        dialog.setTitle("This is a new Dialog");
 //        dialog.setMessage("something important");
@@ -192,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        intentB=new Intent(this,DialogActivity.class);
 //        startActivity(intentB);
 //        break;
-    }
+//    }
   }
 
   @Override
@@ -204,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    Fruit fruit=list.get(position);
-    Toast.makeText(this,fruit.getName(),Toast.LENGTH_SHORT).show();
+//    Fruit fruit=list.get(position);
+//    Toast.makeText(this,fruit.getName(),Toast.LENGTH_SHORT).show();
   }
 }

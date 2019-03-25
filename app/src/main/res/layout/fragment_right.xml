@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity"
-  android:id="@+id/layout_news_list">
-  <fragment
-    android:name="com.axun.justandroid.NewsListFragment"
-    android:id="@+id/frag_news_list"
+  android:background="#cc2202"
+  tools:context=".RightFragment">
+
+  <!-- TODO: Update blank fragment layout -->
+  <TextView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
-  
-  
-  
+    android:layout_height="match_parent"
+    android:text="right" />
 
 </LinearLayout>
