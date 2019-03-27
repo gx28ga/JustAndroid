@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,10 +25,15 @@ public class MainActivity extends BaseActivity {
       Toast.makeText(getApplicationContext(),"clicked",Toast.LENGTH_SHORT).show();
     }
   }
-  
-  
-  
-  
+
+
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
+    Toast.makeText(getApplicationContext(),"keyDown",Toast.LENGTH_SHORT).show();
+
+    return true;
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     
@@ -35,11 +41,12 @@ public class MainActivity extends BaseActivity {
     setContentView(R.layout.activity_main);
     
     MyButton button=findViewById(R.id.btn_mybtn);
-    button.setOnClickListener(new View.OnClickListener() {
+    button.setOnKeyListener(new View.OnKeyListener() {
       @Override
-      public void onClick(View v) {
-        Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
-        
+      public boolean onKey(View v, int keyCode, KeyEvent event) {
+        Toast.makeText(getApplicationContext(),"btn ",Toast.LENGTH_SHORT).show();
+
+        return true;
       }
     });
     
