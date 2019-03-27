@@ -1,142 +1,102 @@
 package com.axun.justandroid;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class MainActivity extends BaseActivity {
   private static final String TAG = "MainActivity";
+  Fragment fragment;
+
+  final FragmentManager fragmentManager=getSupportFragmentManager();
+  
+  final HomeFragment homeFragment=new HomeFragment();
+  final ButlerFragment butlerFragment=new ButlerFragment();
+  final UserFragment userFragment=new UserFragment();
+  FragmentPagerAdapter adapterViewPager;
+  class ClickListener implements View.OnClickListener{
+
+    @Override
+    public void onClick(View v) {
+      Toast.makeText(getApplicationContext(),"clicked",Toast.LENGTH_SHORT).show();
+    }
+  }
+  
+  
+  
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     
     super.onCreate(savedInstanceState);
-    Log.d(TAG, "task id is "+getTaskId());
-    
     setContentView(R.layout.activity_main);
     
-    
-    if(savedInstanceState!=null){
-      String tempData=savedInstanceState.getString("keykey");
-      Log.d(TAG, tempData);
-      Toast.makeText(this,tempData,Toast.LENGTH_LONG).show();
-    }
-//    listView=findViewById(R.id.lv_banana);
-//    
-//    list=Fruit.initFruitList(data);
-//    FruitAdapter adapter=new FruitAdapter(list,this);
-//    listView.setAdapter(adapter);
-//
-//
-//    
-//    listView.setOnItemClickListener(this);
-//    actionBar=getSupportActionBar();
-//    if(actionBar!=null){
-//      actionBar.hide();
-//    }
-//    progressBar=findViewById(R.id.progress_bar);
-//    imageView=findViewById(R.id.iv_img);
-//    btnImgSet=findViewById(R.id.btn_img_set);
-//    btnImgSet.setOnClickListener(this);
-    
-//    buttonA=findViewById(R.id.start_normal_activity);
-//    buttonB=findViewById(R.id.start_dialog_activity);
-//    buttonA.setOnClickListener(this);
-//    buttonB.setOnClickListener(this);
-    
-  }
-
-//  @Override
-//  protected void onRestart() {
-//    super.onRestart();
-//    Log.d(TAG, "onRestart");
-//  }
-//
-//  @Override
-//  protected void onDestroy() {
-//    super.onDestroy();
-//    Log.d(TAG, "onDestroy");
-//  }
-//
-//  @Override
-//  protected void onStop() {
-//    super.onStop();
-//    Log.d(TAG, "onStop");
-//  }
-//
-//  @Override
-//  protected void onPause() {
-//    super.onPause();
-//    Log.d(TAG, "onPause");
-//  }
-//
-//  @Override
-//  protected void onResume() {
-//    super.onResume();
-//    Log.d(TAG, "onResume");
-//  }
-//
-//  @Override
-//  protected void onStart() {
-//    super.onStart();
-//    Log.d(TAG, "onStart");
-//  }
-
-
-  @Override
-  public void onClick(View v) {
-//    int viewId=v.getId();
-//    switch (viewId){
-//      case R.id.btn_img_set:
-//        Intent intent=new Intent(this,FourthActivity.class);
-//        startActivity(intent);
-//        dialog=new AlertDialog.Builder(this);
-//        dialog.setTitle("This is a new Dialog");
-//        dialog.setMessage("something important");
-//        dialog.setCancelable(false);
-//        dialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-//          @Override
-//          public void onClick(DialogInterface dialog, int which) {
-//            
-//          }
-//        });
-//        dialog.show();
+    MyButton button=findViewById(R.id.btn_mybtn);
+    button.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
         
-//        int progress=progressBar.getProgress();
-//        progress++;
-//        progressBar.setProgress(progress);
-//        int visibility=progressBar.getVisibility();
-//        if(visibility==View.GONE){
-//          progressBar.setVisibility(View.VISIBLE);
-//        }else if(visibility==View.VISIBLE){
-//          progressBar.setVisibility(View.GONE);
+      }
+    });
+    
+    
+    
+    
+    
+//    BottomNavigationView bottomNavigationView=findViewById(R.id.bnv_main);
+//    fragment=homeFragment;
+//    
+//    
+//    fragmentManager.beginTransaction().replace(R.id.frag_main,fragment).commit();
+//    bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//      @Override
+//      public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//        
+//        int id=menuItem.getItemId();
+//        switch (id) {
+//          case R.id.bottom_nav_home:
+//            fragment=homeFragment;
+//            break;
+//          case R.id.bottom_nav_butler:
+//            fragment=butlerFragment;
+//            break;
+//          case R.id.bottom_nav_user:
+//            fragment=userFragment;
+//            break;
+//          
 //        }
-//        imageView.setImageResource(R.drawable.begger);
-//        break;
-//      case R.id.start_normal_activity:
-//        intentA=new Intent(this,SecondActivity.class);
-//        startActivity(intentA);
-//        break;
-//      case R.id.start_dialog_activity:
-//        intentB=new Intent(this,DialogActivity.class);
-//        startActivity(intentB);
-//        break;
-//    }
-  }
+//        
+//        fragmentManager.beginTransaction().replace(R.id.frag_main,fragment).commit();
+//        return true;
+//      }
+//    });
 
-  @Override
-  protected void onSaveInstanceState(Bundle outState) {
-    super.onSaveInstanceState(outState);
-    String tempData="look at her butt";
-    outState.putString("keykey",tempData);
-  }
+//    int[] imgs=new int[]{
+//      R.drawable.home_slider_01,
+//      R.drawable.home_slider_02,
+//      R.drawable.home_slider_03,
+//      R.drawable.home_slider_04,
+//      R.drawable.home_slider_05,
+//      R.drawable.home_slider_06,
+//    };
+//    final ViewPager viewPager=findViewById(R.id.vp_home);
+//    viewPager.setAdapter(new MyPagerAdapter(this,imgs));
 
-  @Override
-  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//    Fruit fruit=list.get(position);
-//    Toast.makeText(this,fruit.getName(),Toast.LENGTH_SHORT).show();
+    
+
   }
+    
+
+
+
+
+
+
+
+
 }
+

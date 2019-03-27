@@ -9,12 +9,8 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".NewsDetailActivity"></activity>
-    <activity android:name=".FourthActivity" />
-    <activity
-      android:name=".DialogActivity"
-      android:theme="@style/Theme.AppCompat.Dialog" />
-    <activity android:name=".NormalActivity" />
+   
+    
     <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -22,15 +18,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".SecondActivity">
-      <intent-filter>
-        <action android:name="com.axun.justandroid.bkb" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="com.axun.justandroid.mikasa" />
-      </intent-filter>
-    </activity>
-    <activity android:name=".ThirdActivity" />
+    
   </application>
 
 </manifest>
