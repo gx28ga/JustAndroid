@@ -7,40 +7,22 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity"
   >
-  <!--<FrameLayout-->
-    <!--android:id="@+id/frag_main"-->
-    <!---->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_weight="1"/>-->
-
-  <!--<android.support.design.widget.BottomNavigationView-->
-    <!--android:id="@+id/bnv_main"-->
-    <!--app:menu="@menu/bottom_nav"-->
-    <!---->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="56dp"> -->
-
-  <!--</android.support.design.widget.BottomNavigationView>-->
-  <android.support.v4.view.ViewPager
-    android:id="@+id/vp_home"
-    android:layout_width="match_parent"
-    android:layout_height="300dp">
+  <FrameLayout
+    android:id="@+id/frag_main"
     
-  </android.support.v4.view.ViewPager>
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+
+  <android.support.design.widget.BottomNavigationView
+    android:id="@+id/bnv_main"
+    app:menu="@menu/bottom_nav"
+    
+    android:layout_width="match_parent"
+    android:layout_height="56dp"> 
+
+  </android.support.design.widget.BottomNavigationView>
   
-  
-  
-  <TextView
-    android:id="@+id/tv_t"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-  
-  <com.axun.justandroid.MyButton
-    android:id="@+id/btn_mybtn"
-    android:text="hit me "
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
   
   
   
